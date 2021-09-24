@@ -3,6 +3,7 @@ import 'package:news_app/constants.dart';
 import 'package:news_app/views/popular_tab_view.dart';
 import 'package:news_app/views/recent_tab_view.dart';
 import 'package:news_app/views/trending_tab_view.dart';
+import 'society_tab_view.dart';
 
 class HomeView extends StatelessWidget {
   @override
@@ -16,12 +17,12 @@ class HomeView extends StatelessWidget {
             children: [
               ListTile(
                 title: Text(
-                  "WELCOME",
+                  "XIN CHÀO",
                   textAlign: TextAlign.end,
                   style: kNonActiveTabStyle,
                 ),
                 subtitle: Text(
-                  "Jessica Veranda",
+                  "Ciro IT",
                   textAlign: TextAlign.end,
                   style: kActiveTabStyle,
                 ),
@@ -48,9 +49,10 @@ class HomeView extends StatelessWidget {
                   indicatorColor: Colors.white,
                   labelStyle: kActiveTabStyle.copyWith(fontSize: 25.0),
                   tabs: [
-                    Tab(text: "Popular"),
-                    Tab(text: "Trending"),
-                    Tab(text: "Recent"),
+                    Tab(text: "Tin mới"),
+                    Tab(text: "Thể thao trong nước"),
+                    Tab(text: "Thể thao quốc tế"),
+                    // Tab(text: "Xã hội"),
                   ],
                 ),
               ),
@@ -62,6 +64,7 @@ class HomeView extends StatelessWidget {
             PopularTabView(),
             TrendingTabView(),
             RecentTabView(),
+            // SocietyTabView(),
           ],
         ),
       ),

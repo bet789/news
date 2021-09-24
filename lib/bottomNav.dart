@@ -5,6 +5,14 @@ import 'package:news_app/views/favorite_view.dart';
 import 'package:news_app/views/home_view.dart';
 import 'package:news_app/views/search_view.dart';
 
+import 'views/Profile/Home.dart';
+import 'views/Profile/Video.dart';
+import 'views/Profile/VideoPlayerScreen.dart';
+import 'views/Profile/Profile.dart';
+import 'views/Profile/Cateogory.dart';
+import 'views/weather/weather_page.dart';
+import 'SettingPage/main.dart';
+
 class BottomNav extends StatefulWidget {
   @override
   _BottomNavState createState() => _BottomNavState();
@@ -12,6 +20,8 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
+
+  static get setcategory => null;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -21,9 +31,11 @@ class _BottomNavState extends State<BottomNav> {
 
   static List<Widget> _bottomNavView = [
     HomeView(),
-    SearchView(),
-    FavoriteView(),
-    AccountView(),
+    Cateogory(setcategory),
+    WeatherHome(),
+    Video(),
+    // Profile(),
+    SettingPage(),
   ];
 
   @override
@@ -69,23 +81,28 @@ class NavBarItem {
 
 List<NavBarItem> _navBarList = [
   NavBarItem(
-    icon: "assets/home.svg",
-    activeIcon: "assets/home_2.svg",
+    icon: "assets/home_icon-1.svg",
+    activeIcon: "assets/home_icon.svg",
     title: "Home",
   ),
   NavBarItem(
-    icon: "assets/search.svg",
-    activeIcon: "assets/search_2.svg",
+    icon: "assets/collection.svg",
+    activeIcon: "assets/collection-1.svg",
+    title: "Home",
+  ),
+  NavBarItem(
+    icon: "assets/weather-1.svg",
+    activeIcon: "assets/weather.svg",
     title: "Search",
   ),
   NavBarItem(
-    icon: "assets/favorite.svg",
-    activeIcon: "assets/favorite_2.svg",
-    title: "Favorite",
+    icon: "assets/video.svg",
+    activeIcon: "assets/video-1.svg",
+    title: "Video",
   ),
   NavBarItem(
     icon: "assets/account.svg",
-    activeIcon: "assets/account_2.svg",
-    title: "Account",
+    activeIcon: "assets/account-1.svg",
+    title: "Profile",
   ),
 ];
